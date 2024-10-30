@@ -1,72 +1,116 @@
+:root {
+    --verde: #00ff00;
+    --verdeSombra: #007f00;
+}
+
 body {
-    background-color: black;
     position: relative;
     display: flex;
     flex-direction: column;
     height: 100vh;
     margin: 0;
+
+    background-color: black;
+    color: white;
 }
 
-
 header {
-    height: 60px;
-    box-shadow: 0px 0px 30px 5px rgba(0, 0, 0, 0.10);
-    letter-spacing: 0.5px;
+    padding: 15px 0;
     font-weight: 500;
-    display: flex;
-    align-items: center;
-    padding: 0px 20px;
+    box-shadow: 0px 0px 30px 5px rgba(0, 0, 0, 0.10);
 }
 
 .headerContent {
-    color: white;
+    max-width: 960px;
     margin: 0 auto;
     display: flex;
     align-items: center;
+    justify-content: space-between;
 }
 
 header a {
-    padding: 15px 5px;
     text-shadow: 0px 2px 1px rgba(0, 0, 0, 0.5);
-    display: flex;
-    align-items: center;
+    padding: 10px 0;
+    border-bottom: 3px solid transparent;
 }
 
 header a:hover {
-    color: lightgrey;
+    color: var(--verde);
+    border-bottom: 3px solid var(--verde);
 }
 
-.home {
+header .home a {
     display: flex;
     align-items: center;
 }
 
-.menu {
-    display: flex;
-    gap: 15px;
+header .menu a {
+    margin-left: 10px;
 }
 
 .logoHome {
-    border-radius: 50%;
     height: 40px;
     margin-right: 10px
 }
 
+main {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+main .buttonLink a {
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background-image: linear-gradient(to right bottom, white, darkgray);
+    border-right: 3px solid var(--verdeSombra);
+    border-bottom: 6px solid var(--verde);
+    border-left: 3px solid var(--verdeSombra);
+}
+
+main .buttonLink img {
+    height: 50%;
+    margin: 10px;
+}
+
+main .buttonLink a:hover {
+    color: ;
+    transform: scale(0.95);
+    background-image: linear-gradient(to right bottom, white, silver);
+}
 
 footer {
-    color: white;
     font-weight: 400;
     letter-spacing: 2px;
     padding: 20px;
     margin-top: auto;
     text-align: center;
-    text-shadow: 0px 2px 1px rgba(0, 0, 0, 0.5);
     font-weight: 400;
     font-size: 1em;
 }
 
 footer a:hover {
-    color: gray;
-    transform: scale(1.2);
+    color: var(--verde);
     cursor: pointer;
+}
+
+@keyframes girar {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
 }
