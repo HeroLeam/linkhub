@@ -75,15 +75,14 @@ main .buttonLink a {
     border-left: 3px solid var(--verdeSombra);
 }
 
+main .buttonLink a:hover {
+    transform: scale(0.95);
+    background-image: linear-gradient(to right bottom, white, silver);
+}
+
 main .buttonLink img {
     height: 50%;
     margin: 10px;
-}
-
-main .buttonLink a:hover {
-    color: ;
-    transform: scale(0.95);
-    background-image: linear-gradient(to right bottom, white, silver);
 }
 
 footer {
@@ -101,16 +100,26 @@ footer a:hover {
     cursor: pointer;
 }
 
-@keyframes girar {
+@-webkit-keyframes rotate {
     0% {
-        background-position: 0% 50%;
-    }
-
-    50% {
-        background-position: 100% 50%;
+        -webkit-transform: rotate(0);
+        transform: rotate(0);
     }
 
     100% {
-        background-position: 0% 50%;
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotate {
+    0% {
+        -webkit-transform: rotate(0);
+        transform: rotate(0);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
     }
 }
