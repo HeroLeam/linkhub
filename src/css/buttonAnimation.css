@@ -1,0 +1,75 @@
+.card {
+    background-image: linear-gradient(to right bottom, white, darkgray);
+    position: relative;
+    width: 62px;
+    height: 62px;
+    border-radius: 10px;
+}
+
+.bg {
+    position: absolute;
+    z-index: -1;
+    inset: -4px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.uwu {
+    filter: blur(20px);
+    transition: filter 0.5s;
+}
+
+.bg::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 150%;
+    min-height: 150%;
+    background-image: conic-gradient(hsl(0, 100%, 50%),
+            hsl(30, 100%, 50%),
+            hsl(60, 100%, 50%),
+            hsl(90, 100%, 50%),
+            hsl(120, 100%, 50%),
+            hsl(150, 100%, 50%),
+            hsl(180, 100%, 50%),
+            hsl(210, 100%, 50%),
+            hsl(240, 100%, 60%),
+            hsl(270, 100%, 50%),
+            hsl(300, 100%, 50%),
+            hsl(330, 100%, 50%),
+            hsl(360, 100%, 50%));
+    animation: speeen 4s linear infinite;
+    transform-origin: 0% 0%;
+    transform: rotate(0deg) translate(-50%, -50%);
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.content a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+.iconImage {
+    width: 85%;
+    height: 85%;
+}
+
+
+@keyframes speeen {
+    from {
+        transform: rotate(0deg) translate(-50%, -50%);
+    }
+
+    to {
+        transform: rotate(360deg) translate(-50%, -50%);
+    }
+}
