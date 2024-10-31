@@ -6,17 +6,41 @@
     border-radius: 10px;
 }
 
+.card:hover {
+    background-image: linear-gradient(to right bottom, darkgray, white);
+}
+
 .bg {
     position: absolute;
     z-index: -1;
-    inset: -4px;
+    inset: -6px;
     border-radius: 10px;
     overflow: hidden;
 }
 
+.bgBorder {
+    background-image: linear-gradient(to right bottom, darkgray, white);
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    z-index: -1;
+    width: 66px;
+    height: 66px;
+    border-radius: 10px;
+}
+
+.card:hover .bgBorder {
+    background-image: linear-gradient(to right bottom, white, darkgray);
+    z-index: -1;
+}
+
 .uwu {
-    filter: blur(20px);
-    transition: filter 0.5s;
+    filter: blur(0px);
+    transition: filter 0.1s;
+}
+
+.card:hover .uwu {
+    filter: blur(8px);
 }
 
 .bg::before {
@@ -61,6 +85,11 @@
 .iconImage {
     width: 85%;
     height: 85%;
+}
+
+.card:hover .iconImage {
+    width: 90%;
+    height: 90%;
 }
 
 
