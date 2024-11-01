@@ -35,12 +35,12 @@
 }
 
 .uwu {
-    filter: blur(0px);
+    filter: blur(10px);
     transition: filter 0.1s;
 }
 
 .card:hover .uwu {
-    filter: blur(8px);
+    filter: blur(20px);
 }
 
 .bg::before {
@@ -83,13 +83,13 @@
 }
 
 .iconImage {
-    width: 85%;
-    height: 85%;
+    width: 75%;
+    height: 75%;
 }
 
 .card:hover .iconImage {
-    width: 90%;
-    height: 90%;
+    width: 85%;
+    height: 85%;
 }
 
 
