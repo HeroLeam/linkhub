@@ -10,8 +10,8 @@ async function carregarDados() {
         const linhas = csvText.split('\n').slice(2).map(row => row.split(','));
 
         // Identifica a página atual para escolher as colunas apropriadas
-        const paginaNome = window.location.pathname.split('/').pop().split('.')[0].toLowerCase();
-
+        const paginaNome = window.location.pathname.split('/').pop().split('.')[0].toLowerCase() || 'index';
+        
         // Filtra e mapeia as colunas específicas com base na página
         const dadosFiltrados = linhas.map((linha) => {
             if (paginaNome === 'index') {
