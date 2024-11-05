@@ -35,7 +35,7 @@ async function carregarDados() {
             }
             return null;
         }).filter(Boolean) // Remove entradas nulas caso não haja correspondência
-            .filter((linha) => linha.every(cell => cell)); // Remove linhas com células vazias
+        .filter((linha) => linha.some(cell => cell.trim() !== '')); // Remove linhas completamente vazias
 
         criarCards(dadosFiltrados);
     } catch (error) {
