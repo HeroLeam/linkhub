@@ -8,10 +8,7 @@ async function carregarDados() {
     const csvText = await response.text();
 
     // Converte o CSV em um array de arrays começando a leitura da 2 linha em diante
-    const linhas = csvText
-      .split("\n")
-      .slice(2)
-      .map((row) => row.split(","));
+    const linhas = csvText.split("\n").slice(3).map((row) => row.split(","));
 
     // Identifica a página atual para escolher as colunas apropriadas
     const paginaNome =
@@ -22,23 +19,25 @@ async function carregarDados() {
     const dadosFiltrados = linhas
       .map((linha) => {
         if (paginaNome === "index") {
-          return [linha[0], linha[1], linha[2]];
+          return [linha[1], linha[2], linha[3]];
         } else if (paginaNome === "rib") {
-          return [linha[4], linha[5], linha[6]];
+          return [linha[5], linha[6], linha[7]];
         } else if (paginaNome === "twitch") {
-          return [linha[8], linha[9], linha[10]];
+          return [linha[9], linha[10], linha[11]];
         } else if (paginaNome === "apartamento") {
-          return [linha[12], linha[13], linha[14]];
+          return [linha[13], linha[14], linha[15]];
         } else if (paginaNome === "google") {
-          return [linha[16], linha[17], linha[18]];
+          return [linha[17], linha[18], linha[19]];
+        } else if (paginaNome === "gov") {
+          return [linha[21], linha[22], linha[23]];
         } else if (paginaNome === "anime") {
-          return [linha[20], linha[21], linha[22]];
+          return [linha[25], linha[26], linha[27]];
         } else if (paginaNome === "bancos") {
-          return [linha[24], linha[25], linha[26]];
+          return [linha[29], linha[30], linha[31]];
         } else if (paginaNome === "games") {
-          return [linha[28], linha[29], linha[30]];
+          return [linha[33], linha[34], linha[35]];
         } else if (paginaNome === "store") {
-          return [linha[32], linha[33], linha[34]];
+          return [linha[37], linha[38], linha[39]];
         }
         return null;
       })
