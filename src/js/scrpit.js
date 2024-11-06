@@ -59,6 +59,7 @@ function criarCards(linhas) {
 
     const card = document.createElement("div");
     card.classList.add("card");
+    card.title = nome;
 
     const bgUwu = document.createElement("div");
     bgUwu.classList.add("bg", "uwu");
@@ -91,5 +92,6 @@ function criarCards(linhas) {
     conteudo.appendChild(card);
   });
 }
+
 
 carregarDados();
