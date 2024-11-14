@@ -10,7 +10,8 @@
     <meta property="og:url" content="https://linkhub.herofield.com.br">
     <meta property="og:type" content="website">
     <meta property="og:title" content="LinkHub">
-    <meta property="og:description" content="Atalhos para sites favoritos, planilhas e recursos úteis em um único lugar. Organizado de forma prática e rápida!">
+    <meta property="og:description"
+        content="Atalhos para sites favoritos, planilhas e recursos úteis em um único lugar. Organizado de forma prática e rápida!">
     <meta property="og:image" content="https://linkhub.herofield.com.br/src/images/logo.png">
 
     <!-- Favicon -->
@@ -29,7 +30,8 @@
                 <a class="links homeSelected" href="index.html"><img class="logoHome" src="./src/images/logo.png"
                         alt="Imagem da logo" />Home</a>
             </div>
-            <div class="menu">
+            <button class="hamburger-menu" onclick="toggleMenu()">☰</button>
+            <div class="menu" id="menu">
                 <a href="rib.html">R.I.B.</a>
                 <a href="twitch.html">twitch.tv/heroleam</a>
                 <a href="apartamento.html">Apartamento</a>
@@ -39,6 +41,8 @@
                 <a href="bancos.html">Bancos</a>
                 <a href="games.html">Games</a>
                 <a href="store.html">Store</a>
+                <a class="adicionar" href="https://docs.google.com/spreadsheets/d/1Add9kl4w8OtEgJBDNMRZCaAS0p4zoyHx23ZdC3LQaUk"
+        class="floating-button" target="_blank" rel="noopener noreferrer">+ Adicionar</a>
             </div>
         </div>
     </header>

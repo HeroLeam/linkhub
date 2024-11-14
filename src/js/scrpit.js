@@ -93,5 +93,10 @@ function criarCards(linhas) {
   });
 }
 
-
 carregarDados();
+
+function toggleMenu() {
+  const menu = document.getElementById("menu");
+  menu.classList.toggle("show");
+  console.log("Menu toggle acionado");
+}
