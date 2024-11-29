@@ -129,8 +129,6 @@ footer a:hover {
 
 /* Responsividade */
 @media (max-width: 768px) {
-
-    /* Mostra o botão de hambúrguer e esconde o menu */
     .hamburger-menu {
         display: block;
     }
@@ -162,7 +160,7 @@ footer a:hover {
     main {
         margin: 20px;
     }
-    
+
 
     .floating-button {
         display: none;
