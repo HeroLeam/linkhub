@@ -30,14 +30,12 @@ async function carregarDados() {
           return [linha[17], linha[18], linha[19]];
         } else if (paginaNome === "gov") {
           return [linha[21], linha[22], linha[23]];
-        } else if (paginaNome === "anime") {
-          return [linha[25], linha[26], linha[27]];
         } else if (paginaNome === "bancos") {
-          return [linha[29], linha[30], linha[31]];
+          return [linha[25], linha[26], linha[27]];
         } else if (paginaNome === "games") {
-          return [linha[33], linha[34], linha[35]];
+          return [linha[29], linha[30], linha[31]];
         } else if (paginaNome === "store") {
-          return [linha[37], linha[38], linha[39]];
+          return [linha[33], linha[34], linha[35]];
         }
         return null;
       })
