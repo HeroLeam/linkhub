@@ -59,6 +59,7 @@ async function criarCards(linhas) {
     const card = document.createElement("div");
     card.classList.add("card");
     card.title = nome;
+    card.onclick = () => window.open(url, "_blank");
 
     const bgUwu = document.createElement("div");
     bgUwu.classList.add("bg", "uwu");
@@ -72,21 +73,14 @@ async function criarCards(linhas) {
     const content = document.createElement("div");
     content.classList.add("content");
 
-    const link = document.createElement("a");
-    link.href = url;
-    link.target = "_blank";
-    link.rel = "noopener noreferrer";
-
     const img = document.createElement("img");
     img.classList.add("iconImage");
     img.src = imagemFinal;
     img.alt = `Ícone ${nome || "Link"}`;
-    img.style.width = "75%"; 
-    img.style.height = "75%"; 
+    img.style.height = "80px"; 
     img.style.objectFit = "contain"; 
 
-    link.appendChild(img);
-    content.appendChild(link);
+    content.appendChild(img);
     card.appendChild(bgUwu);
     card.appendChild(bg);
     card.appendChild(bgBorder);
