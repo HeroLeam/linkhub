@@ -1,19 +1,13 @@
 async function carregarDados() {
-  const spreadsheetId =
-    "2PACX-1vS585Q52aHp1uTwQS1QSAwax1piReJjcHfz-I4pGf3i1W9eRGgNw6QiAorAXUegWoo-8nQyuWqENedg";
+  const spreadsheetId = "2PACX-1vS585Q52aHp1uTwQS1QSAwax1piReJjcHfz-I4pGf3i1W9eRGgNw6QiAorAXUegWoo-8nQyuWqENedg";
   const url = `https://docs.google.com/spreadsheets/d/e/${spreadsheetId}/pub?output=csv`;
 
   try {
     const response = await fetch(url);
     const csvText = await response.text();
-
-    // Converte o CSV em um array de arrays começando a leitura da 2 linha em diante
     const linhas = csvText.split("\n").slice(4).map((row) => row.split(","));
-
-    // Identifica a página atual para escolher as colunas apropriadas
     const paginaNome = window.location.pathname.split("/").pop().split(".")[0].toLowerCase() || "index";
 
-    // Filtra e mapeia as colunas específicas com base na página
     const dadosFiltrados = linhas
       .map((linha) => {
         if (paginaNome === "index") {
@@ -35,8 +29,8 @@ async function carregarDados() {
         }
         return null;
       })
-      .filter(Boolean) // Remove entradas nulas caso não haja correspondência
-      .filter((linha) => linha.some((cell) => cell.trim() !== "")); // Remove linhas completamente vazias
+      .filter(Boolean)
+      .filter((linha) => linha.some((cell) => cell.trim() !== ""));
 
     criarCards(dadosFiltrados);
   } catch (error) {
@@ -44,12 +38,23 @@ async function carregarDados() {
   }
 }
 
-function criarCards(linhas) {
+async function obterFavicon(url) {
+  try {
+    const hostname = new URL(url).hostname;
+    return `https://www.google.com/s2/favicons?domain=${hostname}&sz=128`;
+  } catch (error) {
+    console.error("Erro ao obter favicon para", url, error);
+    return null;
+  }
+}
+
+async function criarCards(linhas) {
   const conteudo = document.getElementById("conteudo");
   conteudo.innerHTML = "";
 
-  linhas.forEach((linha) => {
+  for (const linha of linhas) {
     const [nome, url, imagemUrl] = linha;
+    let imagemFinal = imagemUrl && imagemUrl.trim() !== "" ? imagemUrl : await obterFavicon(url);
 
     const card = document.createElement("div");
     card.classList.add("card");
@@ -74,8 +79,11 @@ function criarCards(linhas) {
 
     const img = document.createElement("img");
     img.classList.add("iconImage");
-    img.src = imagemUrl;
+    img.src = imagemFinal;
     img.alt = `Ícone ${nome || "Link"}`;
+    img.style.width = "75%"; 
+    img.style.height = "75%"; 
+    img.style.objectFit = "contain"; 
 
     link.appendChild(img);
     content.appendChild(link);
@@ -84,7 +92,7 @@ function criarCards(linhas) {
     card.appendChild(bgBorder);
     card.appendChild(content);
     conteudo.appendChild(card);
-  });
+  }
 }
 
 carregarDados();
