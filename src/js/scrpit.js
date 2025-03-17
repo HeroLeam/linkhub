@@ -56,10 +56,15 @@ async function criarCards(linhas) {
     const [nome, url, imagemUrl] = linha;
     let imagemFinal = imagemUrl && imagemUrl.trim() !== "" ? imagemUrl : await obterFavicon(url);
 
+    const link = document.createElement("a");
+    link.href = url;
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    link.classList.add("card-link");
+
     const card = document.createElement("div");
     card.classList.add("card");
     card.title = nome;
-    card.onclick = () => window.open(url, "_blank");
 
     const bgUwu = document.createElement("div");
     bgUwu.classList.add("bg", "uwu");
@@ -77,15 +82,17 @@ async function criarCards(linhas) {
     img.classList.add("iconImage");
     img.src = imagemFinal;
     img.alt = `Ícone ${nome || "Link"}`;
-    img.style.height = "80px"; 
-    img.style.objectFit = "contain"; 
+    img.style.width = "75%";
+    img.style.height = "75%";
+    img.style.objectFit = "contain";
 
     content.appendChild(img);
     card.appendChild(bgUwu);
     card.appendChild(bg);
     card.appendChild(bgBorder);
     card.appendChild(content);
-    conteudo.appendChild(card);
+    link.appendChild(card);
+    conteudo.appendChild(link);
   }
 }
 
