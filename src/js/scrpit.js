@@ -24,8 +24,10 @@ async function carregarDados() {
           return [linha[27], linha[28], linha[29]];
         } else if (paginaNome === "store") {
           return [linha[32], linha[33], linha[34]];
-        } else if (paginaNome === "stream") {
+        } else if (paginaNome === "streamCamila") {
           return [linha[37], linha[38], linha[39]];
+        } else if (paginaNome === "streamThiago") {
+          return [linha[42], linha[43], linha[44]];
         }
         return null;
       })
