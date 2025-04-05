@@ -112,6 +112,16 @@ main>#conteudo {
     color: white;
 }
 
+iframe{
+    border: 0;
+}
+
+.iframes {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
 footer {
     font-weight: 400;
     letter-spacing: 2px;
