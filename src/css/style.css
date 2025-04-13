@@ -112,13 +112,13 @@ main>#conteudo {
     color: white;
 }
 
-iframe{
-    border: 0;
-}
-
-.iframes {
+.overlays {
     margin: 0 auto;
     margin-top: 20px;
+}
+
+.iframe {
+    border: 0;
 }
 
 footer {
