@@ -113,12 +113,33 @@ main>#conteudo {
 }
 
 .overlays {
-    margin: 0 auto;
-    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 26px;
+}
+
+.tikfinity {
+    padding: 10px 20px;
+    border-bottom: 3px solid var(--verde);
+    font-weight: bold;
+    font-size: 1.3em;
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.iframeContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
 }
 
 .iframe {
-    border: 0;
+    background-color: var(--verde);
+    width: 400px;
+    height: 100px;
+    border: none;
 }
 
 footer {
