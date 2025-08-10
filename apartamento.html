@@ -33,13 +33,42 @@
                 <a href="store.html">Store</a>
                 <a href="streamcamila.html">Stream Camila</a>
                 <a href="streamthiago.html">Stream Thiago</a>
-                <a class="adicionar" href="https://docs.google.com/spreadsheets/d/1Add9kl4w8OtEgJBDNMRZCaAS0p4zoyHx23ZdC3LQaUk"
-                class="floating-button" target="_blank" rel="noopener noreferrer">+ Adicionar</a>
+                <a class="adicionar"
+                    href="https://docs.google.com/spreadsheets/d/1Add9kl4w8OtEgJBDNMRZCaAS0p4zoyHx23ZdC3LQaUk"
+                    class="floating-button" target="_blank" rel="noopener noreferrer">+ Adicionar</a>
             </div>
         </div>
     </header>
     <main>
         <div id="conteudo"></div>
+
+        <section class="usdbrl-card">
+            <h2 class="usdbrl-title">Calculadora de Dólar</h2>
+
+            <div class="usdbrl-rateRow">
+                <span id="rateText">Carregando cotação...</span>
+                <button id="refreshRate" type="button" class="usdbrl-btn">Atualizar</button>
+            </div>
+
+            <div class="usdbrl-grid3">
+                <label class="usdbrl-field">
+                    <span>USD (US$)</span>
+                    <input id="usdInput" type="number" inputmode="decimal" step="0.01" placeholder="0.00">
+                </label>
+
+                <div class="usdbrl-swapMid">
+                    <button id="swapBtn" type="button" class="usdbrl-btn usdbrl-btn--outline usdbrl-btn--icon"
+                        title="Inverter sentido">↔</button>
+                </div>
+
+                <label class="usdbrl-field">
+                    <span>BRL (R$)</span>
+                    <input id="brlInput" type="number" inputmode="decimal" step="0.01" placeholder="0,00">
+                </label>
+            </div>
+
+            <p class="usdbrl-hint" id="updatedAt"></p>
+        </section>
     </main>
     <a href="https://docs.google.com/spreadsheets/d/1Add9kl4w8OtEgJBDNMRZCaAS0p4zoyHx23ZdC3LQaUk"
         class="floating-button" target="_blank" rel="noopener noreferrer">+</a>
@@ -47,6 +76,7 @@
         <a href="https://heroleam.github.io/portfolio" target="_blank" rel="noopener noreferrer">by HeroLeam</a>
     </footer>
     <script src="./src/js/scrpit.js"></script>
+    <script src="./src/js/dolar.js"></script>
 </body>
 
 </html>
