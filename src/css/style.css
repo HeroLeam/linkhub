@@ -80,8 +80,8 @@ main {
     margin: 0 auto;
     padding: 20px;
     display: flex;
-    flex-direction: row;
-    align-items: flex-start;
+    flex-direction: column;
+    align-items: stretch;
     gap: 20px;
 }
 
@@ -90,7 +90,7 @@ main>#conteudo {
     justify-content: center;
     flex-wrap: wrap;
     gap: 40px;
-    flex: 1;
+    order: 1 !important;
 }
 
 .floating-button {
@@ -186,7 +186,11 @@ section span {
 }
 
 .usdbrl-card {
-    flex: 0 0 150px;
+    margin-top: 20px;
+    order: 2 !important;
+    flex: none !important;
+    width: 100%;
+    max-width: 720px;
 }
 
 .usdbrl-title {
@@ -342,14 +346,6 @@ section span {
 
     .usdbrl-grid3 {
         grid-template-columns: 1fr;
-    }
-
-    #conteudo {
-        order: 1 !important;
-    }
-
-    .usdbrl-card {
-        order: 2 !important;
     }
 
     .usdbrl-card {
